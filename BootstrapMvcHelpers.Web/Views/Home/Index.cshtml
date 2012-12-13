@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+    
+    var links = new List<string>
+    {
+        Html.ActionLink("Test One", "Index").ToString(),
+        Html.ActionLink("Test Two", "Index2").ToString(),
+        "Current"
+    };
+}
+
+<h2>Index</h2>
+
+<div class="well">
+@Html.Label("Success", BootstrapStatus.Success, new { id = "Label1" })
+@Html.Label("Default", BootstrapStatus.Default, new { id = "Label2" })
+@Html.Label("Warning", BootstrapStatus.Warning, new { id = "Label3" })
+@Html.Label("Important", BootstrapStatus.Important, new { id = "Label4" })
+@Html.Label("Info", BootstrapStatus.Info, new { id = "Label5" })
+@Html.Label("Info", BootstrapStatus.Inverse, new { id = "Label6" })
+</div>
+
+<div class="well">
+@Html.Badge("1", BootstrapStatus.Success, new { id="Badge1" })
+@Html.Badge("2", BootstrapStatus.Default, new { id = "Badge2" })
+@Html.Badge("3", BootstrapStatus.Warning, new { id = "Badge3" })
+@Html.Badge("4", BootstrapStatus.Important, new { id = "Badge4" })
+@Html.Badge("5", BootstrapStatus.Info, new { id = "Badge5" })
+@Html.Badge("6", BootstrapStatus.Inverse, new { id = "Badge6" })
+</div>
+
+<div>
+@Html.Breadcrumb(links, new { @class="span5 offset1" })
+</div>

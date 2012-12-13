@@ -1,0 +1,4 @@
+c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers\bin\Debug\BootstrapMvcHelpers.dll
+c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers\bin\Debug\BootstrapMvcHelpers.pdb
+c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.dll
+c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.pdb

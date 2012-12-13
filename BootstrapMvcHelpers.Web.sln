@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapMvcHelpers.Web", "BootstrapMvcHelpers.Web\BootstrapMvcHelpers.Web.csproj", "{598FA022-436A-4388-920E-AD19EE9BBDC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapMvcHelpers", "BootstrapMvcHelpers\BootstrapMvcHelpers.csproj", "{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{598FA022-436A-4388-920E-AD19EE9BBDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598FA022-436A-4388-920E-AD19EE9BBDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598FA022-436A-4388-920E-AD19EE9BBDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598FA022-436A-4388-920E-AD19EE9BBDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
