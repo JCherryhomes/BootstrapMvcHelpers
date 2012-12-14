@@ -8,6 +8,12 @@
         Html.ActionLink("Test Two", "Index2").ToString(),
         "Current"
     };
+
+    var items = new List<MenuDropDownItem>
+    {
+        Html.MenuDropDownItem("Test One", "Index", "Home"),
+        Html.MenuDropDownItem("Test Two", "About", "Home")
+    };
 }
 
 <h2>Index</h2>
@@ -30,6 +36,7 @@
 @Html.Badge("6", BootstrapStatus.Inverse, new { id = "Badge6" })
 </div>
 
-<div>
-@Html.Breadcrumb(links, new { @class="span5 offset1" })
+<div class="well">
+@Html.Breadcrumb(links, new { @class="span12" })
+@Html.MenuDropDown("DropDown", items, htmlAttributes: new { @class = "pull-right" })
 </div>

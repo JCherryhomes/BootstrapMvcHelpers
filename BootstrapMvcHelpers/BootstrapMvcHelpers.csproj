@@ -48,6 +48,8 @@
     <Compile Include="Badge\BadgeHelper.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Breadcrumb\BreadcrumbHelper.cs" />
+    <Compile Include="DropDown\DropDownHelper.cs" />
+    <Compile Include="DropDown\MenuDropDownItem.cs" />
     <Compile Include="Enums\BootstrapStatus.cs" />
     <Compile Include="Strategies\InfoStatusStrategy.cs" />
     <Compile Include="Strategies\InverseStatusStragety.cs" />
