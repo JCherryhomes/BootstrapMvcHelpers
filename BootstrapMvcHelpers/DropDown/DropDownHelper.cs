@@ -55,6 +55,10 @@ namespace BootstrapMvcHelpers
                 item.Controller = helper.ViewContext.Controller.GetType().Name;
             }
 
+            UrlHelper urlHelper = new UrlHelper(helper.ViewContext.RequestContext, helper.RouteCollection);
+            anchorBuilder.Attributes.Add("href", urlHelper.Action(item.Action, item.Controller));
+            anchorBuilder.SetInnerText(item.Text);
+
             return anchorBuilder;
         }
 

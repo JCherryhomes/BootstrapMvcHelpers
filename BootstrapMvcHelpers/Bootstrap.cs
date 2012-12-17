@@ -57,7 +57,7 @@ namespace BootstrapMvcHelpers
         public static MvcHtmlString MenuDropDown(this HtmlHelper helper, string name, IEnumerable<MenuDropDownItem> selectList, string optionLabel=null, object htmlAttributes=null)
         {
             DropDownHelper dropDownHelper = new DropDownHelper();
-            return new MvcHtmlString(dropDownHelper.DropDown(name, selectList, optionLabel, htmlAttributes));
+            return new MvcHtmlString(dropDownHelper.DropDown(helper, name, selectList, optionLabel, htmlAttributes));
         }
 
         public static MenuDropDownItem MenuDropDownItem(this HtmlHelper helper, string text, string action, string controller=null)
