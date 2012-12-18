@@ -6,28 +6,20 @@ namespace BootstrapMvcHelpers
     /// The MenuDropDownItem class
     /// </summary>
     /// <remarks>This class is used to define the items in the MenuDropDown control</remarks>
-    public class MenuDropDownItem
+    public class MenuItem
     {
         /// <summary>
         /// The html helper
         /// </summary>
-        private HtmlHelper helper;
+        internal HtmlHelper helper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MenuDropDownItem" /> class.
-        /// </summary>
-        public MenuDropDownItem()
-        {
-
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MenuDropDownItem" /> class.
+        /// Initializes a new instance of the <see cref="MenuItem" /> class.
         /// </summary>
         /// <param name="helper">The html helper.</param>
-        internal MenuDropDownItem(HtmlHelper helper)
+        internal MenuItem(HtmlHelper helper)
         {
-
+            this.helper = helper;
         }
 
         /// <summary>
@@ -62,26 +54,19 @@ namespace BootstrapMvcHelpers
         /// </returns>
         public override string ToString()
         {
-            if (helper != null)
+            var anchorBuilder = new TagBuilder("a");
+            anchorBuilder.Attributes.Add("tabindex", "-1");
+
+            if (string.IsNullOrWhiteSpace(Controller))
             {
-                var anchorBuilder = new TagBuilder("a");
-                anchorBuilder.Attributes.Add("tabindex", "-1");
-
-                if (string.IsNullOrWhiteSpace(Controller))
-                {
-                    Controller = helper.ViewContext.Controller.GetType().Name;
-                }
-
-                UrlHelper urlHelper = new UrlHelper(helper.ViewContext.RequestContext, helper.RouteCollection);
-                anchorBuilder.Attributes.Add("href", urlHelper.Action(Action, Controller));
-                anchorBuilder.SetInnerText(Text);
-
-                return anchorBuilder.ToString();
+                Controller = helper.ViewContext.Controller.GetType().Name;
             }
-            else
-            {
-                return base.ToString();
-            }
+
+            UrlHelper urlHelper = new UrlHelper(helper.ViewContext.RequestContext, helper.RouteCollection);
+            anchorBuilder.Attributes.Add("href", urlHelper.Action(Action, Controller));
+            anchorBuilder.SetInnerText(Text);
+
+            return anchorBuilder.ToString();
         }
     }
 }

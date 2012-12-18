@@ -24,7 +24,7 @@ namespace BootstrapMvcHelpers
         /// <param name="optionLabel">The option label.</param>
         /// <param name="htmlAttributes">The HTML attributes.</param>
         /// <returns></returns>
-        public string DropDown(HtmlHelper helper, string name, IEnumerable<MenuDropDownItem> selectList, string optionLabel, object htmlAttributes)
+        public string DropDown(HtmlHelper helper, string name, IEnumerable<MenuItem> selectList, string optionLabel, object htmlAttributes)
         {
             this.helper = helper;
             var divBuilder = GetDropDownDivBuilder(name, htmlAttributes);
@@ -53,7 +53,7 @@ namespace BootstrapMvcHelpers
         /// </summary>
         /// <param name="item">The item.</param>
         /// <returns></returns>
-        private TagBuilder GetListItemBuilder(MenuDropDownItem item)
+        private TagBuilder GetListItemBuilder(MenuItem item)
         {
             var listItemBuilder = new TagBuilder("li");
 

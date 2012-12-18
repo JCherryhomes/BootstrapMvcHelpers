@@ -48,21 +48,38 @@ namespace BootstrapMvcHelpers
         /// <param name="htmlAttributes">The HTML attributes.</param>
         /// <returns>returns a breadcrumb html string</returns>
         /// <example>@Html.Breadcrumb(links, new { @class="span5 offset1" })</example>
-        public static MvcHtmlString Breadcrumb(this HtmlHelper helper, IEnumerable<string> actionLinks, object htmlAttributes=null)
+        public static MvcHtmlString Breadcrumb(this HtmlHelper helper, IEnumerable<MenuItem> actionLinks, object htmlAttributes=null)
         {
-            BreadcrumbHelper breadcrumbHelper = new BreadcrumbHelper();
+            BreadcrumbHelper breadcrumbHelper = new BreadcrumbHelper(helper);
             return new MvcHtmlString(breadcrumbHelper.Breadcrumb(helper, actionLinks, htmlAttributes));
         }
 
-        public static MvcHtmlString MenuDropDown(this HtmlHelper helper, string name, IEnumerable<MenuDropDownItem> selectList, string optionLabel=null, object htmlAttributes=null)
+        /// <summary>
+        /// Renders the menu drop down component.
+        /// </summary>
+        /// <param name="helper">The helper.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="selectList">The select list.</param>
+        /// <param name="optionLabel">The option label.</param>
+        /// <param name="htmlAttributes">The HTML attributes.</param>
+        /// <returns></returns>
+        public static MvcHtmlString MenuDropDown(this HtmlHelper helper, string name, IEnumerable<MenuItem> selectList, string optionLabel=null, object htmlAttributes=null)
         {
             DropDownHelper dropDownHelper = new DropDownHelper();
             return new MvcHtmlString(dropDownHelper.DropDown(helper, name, selectList, optionLabel, htmlAttributes));
         }
 
-        public static MenuDropDownItem MenuDropDownItem(this HtmlHelper helper, string text, string action, string controller=null)
+        /// <summary>
+        /// The menu item.
+        /// </summary>
+        /// <param name="helper">The helper.</param>
+        /// <param name="text">The text.</param>
+        /// <param name="action">The action.</param>
+        /// <param name="controller">The controller.</param>
+        /// <returns></returns>
+        public static MenuItem MenuItem(this HtmlHelper helper, string text, string action, string controller=null)
         {
-            return new MenuDropDownItem { Action = action, Controller = controller, Text = text };
+            return new MenuItem(helper) { Action = action, Controller = controller, Text = text };
         }
 
         private static IStatusStrategy GetStatusStrategy(BootstrapStatus status)
