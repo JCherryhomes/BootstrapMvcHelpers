@@ -49,6 +49,9 @@
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Breadcrumb\BreadcrumbHelper.cs" />
     <Compile Include="DropDown\DropDownHelper.cs" />
+    <Compile Include="Enums\BrandPosition.cs" />
+    <Compile Include="Interfaces\IBootstrapComponent.cs" />
+    <Compile Include="NavBar\NavBarHelper.cs" />
     <Compile Include="Shared\MenuItem.cs" />
     <Compile Include="Enums\BootstrapStatus.cs" />
     <Compile Include="Strategies\InfoStatusStrategy.cs" />

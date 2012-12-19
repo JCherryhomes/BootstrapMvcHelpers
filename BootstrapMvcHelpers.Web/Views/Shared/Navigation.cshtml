@@ -1,0 +1,10 @@
+﻿@{
+    var items = new List<MenuItem>
+    {
+        Html.MenuItem("Bootstrap MVC Helpers", "Index", "Home"),
+        Html.MenuItem("Home Page", "Index", "Home"),
+        Html.MenuItem("About Page", "About", "Home")
+    };
+}
+
+@Html.NavBar(items, BrandPosition.Start, new { @class = "navbar-fixed-top navbar-inverse" })

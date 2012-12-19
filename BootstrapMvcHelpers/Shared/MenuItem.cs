@@ -16,10 +16,16 @@ namespace BootstrapMvcHelpers
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuItem" /> class.
         /// </summary>
-        /// <param name="helper">The html helper.</param>
-        internal MenuItem(HtmlHelper helper)
+        /// <param name="helper">The helper.</param>
+        /// <param name="text">The text.</param>
+        /// <param name="action">The action.</param>
+        /// <param name="controller">The controller.</param>
+        internal MenuItem(HtmlHelper helper, string text="", string action="", string controller="")
         {
             this.helper = helper;
+            this.Text = text;
+            this.Action = action;
+            this.Controller = controller;
         }
 
         /// <summary>
@@ -52,7 +58,7 @@ namespace BootstrapMvcHelpers
         /// <returns>
         /// A <see cref="System.String" /> that represents this instance.
         /// </returns>
-        public override string ToString()
+        public string Render()
         {
             var anchorBuilder = new TagBuilder("a");
             anchorBuilder.Attributes.Add("tabindex", "-1");

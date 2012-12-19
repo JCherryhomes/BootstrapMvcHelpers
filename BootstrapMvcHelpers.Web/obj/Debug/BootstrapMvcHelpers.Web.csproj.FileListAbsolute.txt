@@ -30,3 +30,35 @@ c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\
 c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.csprojResolveAssemblyReference.cache
 c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.dll
 c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.pdb
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.Web.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.Web.pdb
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\Newtonsoft.Json.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.WebRequest.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Helpers.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Http.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Mvc.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Razor.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.pdb
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\Newtonsoft.Json.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.WebRequest.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Helpers.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Http.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Mvc.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.Razor.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Debug\BootstrapMvcHelpers.Web.pdb

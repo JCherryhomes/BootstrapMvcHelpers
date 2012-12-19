@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using BootstrapMvcHelpers.Strategies;
 
@@ -13,6 +10,20 @@ namespace BootstrapMvcHelpers
     public static class Bootstrap
     {
         /// <summary>
+        /// Renders a Twitter Bootstrap NavBar component.
+        /// </summary>
+        /// <param name="helper">The HTML helper.</param>
+        /// <param name="menuList">The menu list.</param>
+        /// <param name="position">The brand position.</param>
+        /// <param name="htmlAttributes">The HTML attributes.</param>
+        /// <returns></returns>
+        public static MvcHtmlString NavBar(this HtmlHelper helper, IEnumerable<MenuItem> menuList, BrandPosition position=BrandPosition.None, object htmlAttributes=null)
+        {
+            var navBar = new NavBarHelper(helper, menuList, position, htmlAttributes);
+            return new MvcHtmlString(navBar.Render());
+        }
+
+        /// <summary>
         /// Renders a Twitter Bootstrap label component
         /// </summary>
         /// <param name="helper">The html helper.</param>
@@ -22,8 +33,8 @@ namespace BootstrapMvcHelpers
         /// <returns>Returns a label html string</returns>
         public static MvcHtmlString Label(this HtmlHelper helper, string text, BootstrapStatus status, object htmlAttributes)
         {
-            LabelHelper labelHelper = new LabelHelper(GetStatusStrategy(status));
-            return new MvcHtmlString(labelHelper.Label(text, status, htmlAttributes));
+            LabelHelper labelHelper = new LabelHelper(GetStatusStrategy(status), text, status, htmlAttributes);
+            return new MvcHtmlString(labelHelper.Render());
         }
 
         /// <summary>
@@ -36,8 +47,8 @@ namespace BootstrapMvcHelpers
         /// <returns>Returns a badge html string</returns>
         public static MvcHtmlString Badge(this HtmlHelper helper, string text, BootstrapStatus status, object htmlAttributes)
         {
-            BadgeHelper badgeHelper = new BadgeHelper(GetStatusStrategy(status));
-            return new MvcHtmlString(badgeHelper.Badge(text, status, htmlAttributes));
+            BadgeHelper badgeHelper = new BadgeHelper(helper, GetStatusStrategy(status), text, status, htmlAttributes);
+            return new MvcHtmlString(badgeHelper.Render());
         }
 
         /// <summary>
@@ -50,8 +61,8 @@ namespace BootstrapMvcHelpers
         /// <example>@Html.Breadcrumb(links, new { @class="span5 offset1" })</example>
         public static MvcHtmlString Breadcrumb(this HtmlHelper helper, IEnumerable<MenuItem> actionLinks, object htmlAttributes=null)
         {
-            BreadcrumbHelper breadcrumbHelper = new BreadcrumbHelper(helper);
-            return new MvcHtmlString(breadcrumbHelper.Breadcrumb(helper, actionLinks, htmlAttributes));
+            BreadcrumbHelper breadcrumbHelper = new BreadcrumbHelper(helper, actionLinks, htmlAttributes);
+            return new MvcHtmlString(breadcrumbHelper.Render());
         }
 
         /// <summary>
@@ -65,8 +76,8 @@ namespace BootstrapMvcHelpers
         /// <returns></returns>
         public static MvcHtmlString MenuDropDown(this HtmlHelper helper, string name, IEnumerable<MenuItem> selectList, string optionLabel=null, object htmlAttributes=null)
         {
-            DropDownHelper dropDownHelper = new DropDownHelper();
-            return new MvcHtmlString(dropDownHelper.DropDown(helper, name, selectList, optionLabel, htmlAttributes));
+            DropDownHelper dropDownHelper = new DropDownHelper(helper, name, selectList, optionLabel, htmlAttributes);
+            return new MvcHtmlString(dropDownHelper.Render());
         }
 
         /// <summary>
@@ -76,12 +87,15 @@ namespace BootstrapMvcHelpers
         /// <param name="text">The text.</param>
         /// <param name="action">The action.</param>
         /// <param name="controller">The controller.</param>
-        /// <returns></returns>
         public static MenuItem MenuItem(this HtmlHelper helper, string text, string action, string controller=null)
         {
-            return new MenuItem(helper) { Action = action, Controller = controller, Text = text };
+            return new MenuItem(helper, text, action, controller);
         }
 
+        /// <summary>
+        /// Gets the status strategy.
+        /// </summary>
+        /// <param name="status">The status.</param>
         private static IStatusStrategy GetStatusStrategy(BootstrapStatus status)
         {
             IStatusStrategy strategy;
