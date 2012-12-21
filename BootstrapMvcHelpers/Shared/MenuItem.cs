@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace BootstrapMvcHelpers
 {
@@ -12,6 +13,16 @@ namespace BootstrapMvcHelpers
         /// The html helper
         /// </summary>
         internal HtmlHelper helper;
+        private readonly object htmlAttributes;
+        private readonly string cssClass;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MenuItem" /> class.
+        /// </summary>
+        public MenuItem()
+        {
+
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuItem" /> class.
@@ -20,12 +31,16 @@ namespace BootstrapMvcHelpers
         /// <param name="text">The text.</param>
         /// <param name="action">The action.</param>
         /// <param name="controller">The controller.</param>
-        internal MenuItem(HtmlHelper helper, string text="", string action="", string controller="")
+        /// <param name="htmlAttributes">The HTML attributes.</param>
+        /// <param name="cssClass">The CSS class.</param>
+        internal MenuItem(HtmlHelper helper, string text="", string action="", string controller="", object htmlAttributes=null, string cssClass=null)
         {
             this.helper = helper;
             this.Text = text;
             this.Action = action;
             this.Controller = controller;
+            this.htmlAttributes = htmlAttributes;
+            this.cssClass = cssClass;
         }
 
         /// <summary>
@@ -61,6 +76,8 @@ namespace BootstrapMvcHelpers
         public string Render()
         {
             var anchorBuilder = new TagBuilder("a");
+            anchorBuilder.MergeAttributes(new RouteValueDictionary(htmlAttributes));
+            anchorBuilder.AddCssClass(cssClass);
             anchorBuilder.Attributes.Add("tabindex", "-1");
 
             if (string.IsNullOrWhiteSpace(Controller))

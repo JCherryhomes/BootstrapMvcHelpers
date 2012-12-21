@@ -48,12 +48,15 @@
     <Compile Include="Badge\BadgeHelper.cs" />
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Breadcrumb\BreadcrumbHelper.cs" />
+    <Compile Include="Button\ButtonHelper.cs" />
     <Compile Include="DropDown\DropDownHelper.cs" />
     <Compile Include="Enums\BrandPosition.cs" />
+    <Compile Include="Enums\ButtonStatus.cs" />
     <Compile Include="Interfaces\IBootstrapComponent.cs" />
     <Compile Include="NavBar\NavBarHelper.cs" />
     <Compile Include="Shared\MenuItem.cs" />
     <Compile Include="Enums\BootstrapStatus.cs" />
+    <Compile Include="Strategies\DangerStatusStrategy.cs" />
     <Compile Include="Strategies\InfoStatusStrategy.cs" />
     <Compile Include="Strategies\InverseStatusStragety.cs" />
     <Compile Include="Label\LabelHelper.cs" />

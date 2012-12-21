@@ -23,6 +23,12 @@ namespace BootstrapMvcHelpers
             return new MvcHtmlString(navBar.Render());
         }
 
+        public static MvcHtmlString Button(this HtmlHelper helper, string text, string action, string controller="", ButtonStatus status = ButtonStatus.Default, object htmlAttributes = null)
+        {
+            ButtonHelper button = new ButtonHelper(helper, GetStatusStrategy(status), text, action, controller, status, htmlAttributes);
+            return new MvcHtmlString(button.Render());
+        }
+
         /// <summary>
         /// Renders a Twitter Bootstrap label component
         /// </summary>
@@ -114,6 +120,39 @@ namespace BootstrapMvcHelpers
                     strategy = new InfoStatusStrategy();
                     break;
                 case BootstrapStatus.Inverse:
+                    strategy = new InverseStatusStragety();
+                    break;
+                default:
+                    strategy = new DefaultStatusStrategy();
+                    break;
+            }
+
+            return strategy;
+        }
+
+        /// <summary>
+        /// Gets the button status strategy.
+        /// </summary>
+        /// <param name="status">The status.</param>
+        /// <returns></returns>
+        private static IStatusStrategy GetStatusStrategy(ButtonStatus status)
+        {
+            IStatusStrategy strategy;
+            switch (status)
+            {
+                case ButtonStatus.Success:
+                    strategy = new SuccessStatusStrategy();
+                    break;
+                case ButtonStatus.Warning:
+                    strategy = new WarningStatusStrategy();
+                    break;
+                case ButtonStatus.Danger:
+                    strategy = new DangerStatusStrategy();
+                    break;
+                case ButtonStatus.Info:
+                    strategy = new InfoStatusStrategy();
+                    break;
+                case ButtonStatus.Inverse:
                     strategy = new InverseStatusStragety();
                     break;
                 default:
