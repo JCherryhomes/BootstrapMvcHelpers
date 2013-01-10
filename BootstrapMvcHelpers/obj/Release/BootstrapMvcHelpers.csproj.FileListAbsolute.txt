@@ -1,0 +1,4 @@
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\bin\Release\BootstrapMvcHelpers.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\bin\Release\BootstrapMvcHelpers.pdb
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\obj\Release\BootstrapMvcHelpers.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\obj\Release\BootstrapMvcHelpers.pdb

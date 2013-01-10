@@ -69,7 +69,19 @@
     <Compile Include="Strategies\SuccessStatusStrategy.cs" />
     <Compile Include="Strategies\WarningStatusStrategy.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\content\controllers\" />
+    <Folder Include="bin\Release\tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BootstrapMvcHelpers.dll" />
+    <Content Include="bin\Debug\BootstrapMvcHelpers.pdb" />
+    <Content Include="bin\Release\lib\net40\BootstrapMvcHelpers.dll" />
+    <Content Include="bin\Release\BootstrapMvcHelpers.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Release\BootstrapMvcHelpers.dll.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BootstrapMvcHelpers</id>
+    <version>1.0.0</version>
+    <authors>Jonathan</authors>
+    <owners>Jonathan</owners>
+    <projectUrl>https://github.com/nakor/BootstrapMvcHelpers</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This library provides html helpers for implementing the Twitter bootstrap components in an ASP.NET MVC application.</description>
+    <releaseNotes>First Release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Twitter Bootstrap MVC</tags>
+    <dependencies>
+        <dependency id="Twitter.Bootstrap" version="2.2.2" />
+    </dependencies>
+  </metadata>
+</package>

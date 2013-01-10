@@ -143,12 +143,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BootstrapMvcHelpers\BootstrapMvcHelpers.csproj">
-      <Project>{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}</Project>
-      <Name>BootstrapMvcHelpers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\LayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Navigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootstrapMvcHelpers\BootstrapMvcHelpers.csproj">
+      <Project>{77704DB3-FBB5-42DF-B1C3-6D24883E1EDA}</Project>
+      <Name>BootstrapMvcHelpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
