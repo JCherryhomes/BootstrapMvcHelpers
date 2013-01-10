@@ -1,13 +1,4 @@
 BootstrapMvcHelpers
 ===================
 
-Html helpers for twitter bootstrap components
-
-I created this library to help with creating some of the Twitter Bootstrap components 
-without having to remember, or lookup, which html elements need what classes and in what
-order all of the elements need to be created.
-
-This project is being made as a personal project but can be used by anyone. However, I
-am not liable for any problems that may arise from use of this library.
-
-Thanks
+This library provides html helpers for implementing the Twitter bootstrap components in an ASP.NET MVC application. This library is dependant upon the Twitter bootstrap stylesheet and javascript files already being included in the application. These files can be downloaded from the <a href='http://twitter.github.com/bootstrap/'>Twitter Bootstrap</a> site.
