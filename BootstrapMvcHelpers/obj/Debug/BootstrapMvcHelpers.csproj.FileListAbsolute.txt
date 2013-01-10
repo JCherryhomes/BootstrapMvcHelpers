@@ -5,6 +5,5 @@ c:\users\jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\
 C:\Users\Jonathan\documents\visual studio 2010\Projects\BootstrapMvcHelpers.Web\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\bin\Debug\BootstrapMvcHelpers.dll
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\bin\Debug\BootstrapMvcHelpers.pdb
-C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.dll
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers\obj\Debug\BootstrapMvcHelpers.pdb

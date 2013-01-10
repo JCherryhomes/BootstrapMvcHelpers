@@ -14,6 +14,7 @@ C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\b
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.dll
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.pdb
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\Newtonsoft.Json.xml
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.xml
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Net.Http.Formatting.xml
@@ -26,7 +27,6 @@ C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\b
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.xml
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Release\BootstrapMvcHelpers.Web.csprojResolveAssemblyReference.cache
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Release\BootstrapMvcHelpers.Web.dll
 C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Release\BootstrapMvcHelpers.Web.pdb
-C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\bin\BootstrapMvcHelpers.pdb
-C:\Users\Jonathan\Documents\GitHub\BootstrapMvcHelpers\BootstrapMvcHelpers.Web\obj\Release\BootstrapMvcHelpers.Web.csprojResolveAssemblyReference.cache
