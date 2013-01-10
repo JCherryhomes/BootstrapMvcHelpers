@@ -12,7 +12,9 @@ namespace BootstrapMvcHelpers
     {
         private readonly HtmlHelper helper;
         private readonly IEnumerable<MenuItem> menuList;
-        private readonly BrandPosition position;
+        private readonly BrandPosition brandPosition;
+        private readonly NavBarDisplay displayType;
+        private readonly NavBarPosition navbarPosition;
         private readonly object htmlAttributes;
 
         /// <summary>
@@ -21,12 +23,14 @@ namespace BootstrapMvcHelpers
         /// <param name="helper">The helper.</param>
         /// <param name="menuList">The menu list.</param>
         /// <param name="position">The position.</param>
-        public NavBarHelper(HtmlHelper helper, IEnumerable<MenuItem> menuList, BrandPosition position, object htmlAttributes)
+        public NavBarHelper(HtmlHelper helper, IEnumerable<MenuItem> menuList, BrandPosition brandPosition, NavBarDisplay displayType, NavBarPosition navbarPosition, object htmlAttributes)
         {
             this.helper = helper;
             this.menuList = menuList;
-            this.position = position;
+            this.brandPosition = brandPosition;
+            this.navbarPosition = navbarPosition;
             this.htmlAttributes = htmlAttributes;
+            this.displayType = displayType;
         }
 
         /// <summary>
@@ -39,11 +43,47 @@ namespace BootstrapMvcHelpers
             var mainDivBuilder = GetDivBuilder();
             mainDivBuilder.MergeAttributes(new RouteValueDictionary(htmlAttributes));
             mainDivBuilder.AddCssClass("navbar");
+            mainDivBuilder.AddCssClass(GetNavBarDisplayTypeCssClass(displayType));
+            mainDivBuilder.AddCssClass(GetNavBarPositionCssClass(navbarPosition));
 
             var innerDivBuilder = GetInnerDivBuilder();
             mainDivBuilder.InnerHtml += innerDivBuilder.ToString();
-            
+
             return mainDivBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Gets the nav bar display type CSS class.
+        /// </summary>
+        /// <param name="displayType">The display type.</param>
+        /// <returns></returns>
+        private string GetNavBarDisplayTypeCssClass(NavBarDisplay displayType)
+        {
+            switch (displayType)
+            {
+                case NavBarDisplay.Inverse:
+                    return "navbar-inverse";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Gets the nav bar position CSS class.
+        /// </summary>
+        /// <param name="navbarPosition">The navbar position.</param>
+        /// <returns></returns>
+        private string GetNavBarPositionCssClass(NavBarPosition navbarPosition)
+        {
+            switch (navbarPosition)
+            {
+                case NavBarPosition.Top:
+                    return "navbar-fixed-top";
+                case NavBarPosition.Bottom:
+                    return "navbar-fixed-bottom";
+                default:
+                    return string.Empty;
+            }
         }
 
         /// <summary>
@@ -53,32 +93,43 @@ namespace BootstrapMvcHelpers
         private TagBuilder GetInnerDivBuilder()
         {
             var innerDivBuilder = GetDivBuilder();
-            innerDivBuilder.AddCssClass("navbar-inner");
-
+            var brandBuilder = GetBrandBuilder();
             var containerDiv = GetDivBuilder();
+            var navListBuilder = GetUnorderedListBuilder();
+
+            innerDivBuilder.AddCssClass("navbar-inner");
             containerDiv.AddCssClass("container");
 
             containerDiv.InnerHtml += GetCollapseControlBuilder().ToString();
-
-            if (position == BrandPosition.Start)
-            {
-                var brandBuilder = GetBrandBuilder();
-                innerDivBuilder.InnerHtml += brandBuilder.ToString(TagRenderMode.Normal);
-            }
-
-            var navListBuilder = GetUnorderedListBuilder();
             containerDiv.InnerHtml += navListBuilder.ToString();
 
-            if (position == BrandPosition.End)
-            {
-                var brandBuilder = GetBrandBuilder();
-                innerDivBuilder.InnerHtml += brandBuilder.ToString(TagRenderMode.Normal);
-            }
+            AddBrandItemHtml(containerDiv, brandBuilder);
 
             innerDivBuilder.InnerHtml += containerDiv.ToString();
             return innerDivBuilder;
         }
 
+        /// <summary>
+        /// Adds the brand item HTML to the inner div builder.
+        /// </summary>
+        /// <param name="innerDivBuilder">The inner div builder.</param>
+        /// <param name="brandBuilder">The brand builder.</param>
+        private void AddBrandItemHtml(TagBuilder innerDivBuilder, TagBuilder brandBuilder)
+        {
+            if (brandPosition == BrandPosition.End)
+            {
+                innerDivBuilder.InnerHtml += string.Format("{0} ", brandBuilder);
+            }
+            else
+            {
+                innerDivBuilder.InnerHtml = string.Format(" {0}{1}", brandBuilder, innerDivBuilder.InnerHtml);
+            }
+        }
+
+        /// <summary>
+        /// Gets the collapse control builder.
+        /// </summary>
+        /// <returns></returns>
         private TagBuilder GetCollapseControlBuilder()
         {
             var anchorBuilder = new TagBuilder("a");
@@ -126,9 +177,9 @@ namespace BootstrapMvcHelpers
 
             foreach (var item in menuList)
             {
-                bool isBrandItem = 
-                    (position == BrandPosition.Start && item == menuList.FirstOrDefault())
-                    || (position == BrandPosition.End && item == menuList.LastOrDefault());
+                bool isBrandItem =
+                    (brandPosition == BrandPosition.Start && item == menuList.FirstOrDefault())
+                    || (brandPosition == BrandPosition.End && item == menuList.LastOrDefault());
 
                 if (!isBrandItem)
                 {
@@ -148,7 +199,7 @@ namespace BootstrapMvcHelpers
         private TagBuilder GetBrandBuilder()
         {
             MenuItem item = null;
-            switch (position)
+            switch (brandPosition)
             {
                 case BrandPosition.Start:
                     item = menuList.FirstOrDefault();
@@ -160,23 +211,21 @@ namespace BootstrapMvcHelpers
                     break;
             }
 
-            if (item != null)
-            {
-                var anchorBuilder = new TagBuilder("a");
-                anchorBuilder.AddCssClass("brand");
-
-                if (string.IsNullOrWhiteSpace(item.Controller))
-                {
-                    item.Controller = helper.ViewContext.Controller.GetType().Name;
-                }
-
-                BuildAnchorFromMenuItem(item, anchorBuilder);
-                return anchorBuilder;
-            }
-            else
+            if (item == null)
             {
                 return null;
             }
+
+            var anchorBuilder = new TagBuilder("a");
+            anchorBuilder.AddCssClass("brand");
+
+            if (string.IsNullOrWhiteSpace(item.Controller))
+            {
+                item.Controller = helper.ViewContext.Controller.GetType().Name;
+            }
+
+            BuildAnchorFromMenuItem(item, anchorBuilder);
+            return anchorBuilder;
         }
 
         /// <summary>

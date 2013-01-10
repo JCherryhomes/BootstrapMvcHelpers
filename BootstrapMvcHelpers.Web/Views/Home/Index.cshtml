@@ -8,30 +8,29 @@
         Html.MenuItem("About Page", "About", "Home")
     };
 }
+<div class="span12">
+    <div class="well">
+        @Html.Label("Success", BootstrapStatus.Success, new { id = "Label1" })
+        @Html.Label("Default", BootstrapStatus.Default, new { id = "Label2" })
+        @Html.Label("Warning", BootstrapStatus.Warning, new { id = "Label3" })
+        @Html.Label("Important", BootstrapStatus.Important, new { id = "Label4" })
+        @Html.Label("Info", BootstrapStatus.Info, new { id = "Label5" })
+        @Html.Label("Info", BootstrapStatus.Inverse, new { id = "Label6" })
+    </div>
 
-<h2>Index</h2>
+    <div class="well">
+        @Html.Badge("1", BootstrapStatus.Success, new { id = "Badge1" })
+        @Html.Badge("2", BootstrapStatus.Default, new { id = "Badge2" })
+        @Html.Badge("3", BootstrapStatus.Warning, new { id = "Badge3" })
+        @Html.Badge("4", BootstrapStatus.Important, new { id = "Badge4" })
+        @Html.Badge("5", BootstrapStatus.Info, new { id = "Badge5" })
+        @Html.Badge("6", BootstrapStatus.Inverse, new { id = "Badge6" })
+    </div>
 
-<div class="well">
-@Html.Label("Success", BootstrapStatus.Success, new { id = "Label1" })
-@Html.Label("Default", BootstrapStatus.Default, new { id = "Label2" })
-@Html.Label("Warning", BootstrapStatus.Warning, new { id = "Label3" })
-@Html.Label("Important", BootstrapStatus.Important, new { id = "Label4" })
-@Html.Label("Info", BootstrapStatus.Info, new { id = "Label5" })
-@Html.Label("Info", BootstrapStatus.Inverse, new { id = "Label6" })
-</div>
-
-<div class="well">
-@Html.Badge("1", BootstrapStatus.Success, new { id="Badge1" })
-@Html.Badge("2", BootstrapStatus.Default, new { id = "Badge2" })
-@Html.Badge("3", BootstrapStatus.Warning, new { id = "Badge3" })
-@Html.Badge("4", BootstrapStatus.Important, new { id = "Badge4" })
-@Html.Badge("5", BootstrapStatus.Info, new { id = "Badge5" })
-@Html.Badge("6", BootstrapStatus.Inverse, new { id = "Badge6" })
-</div>
-
-<div class="well">
-@Html.Breadcrumb(items, new { @class="span12" })
-@Html.MenuDropDown("DropDown", items)
-<br />
-@Html.Button("Test", "Index", "Home", ButtonStatus.Info, htmlAttributes: new { @class = "span2" })
+    <div class="well">
+        @Html.Breadcrumb(items)
+        @Html.MenuDropDown("DropDown", items)
+        <br />
+        @Html.Button("Test", "Index", "Home", ButtonStatus.Info, htmlAttributes: new { @class = "input-small" })
+    </div>
 </div>

@@ -14,15 +14,25 @@ namespace BootstrapMvcHelpers
         /// </summary>
         /// <param name="helper">The HTML helper.</param>
         /// <param name="menuList">The menu list.</param>
-        /// <param name="position">The brand position.</param>
+        /// <param name="brandPosition">The brand position.</param>
         /// <param name="htmlAttributes">The HTML attributes.</param>
         /// <returns></returns>
-        public static MvcHtmlString NavBar(this HtmlHelper helper, IEnumerable<MenuItem> menuList, BrandPosition position=BrandPosition.None, object htmlAttributes=null)
+        public static MvcHtmlString NavBar(this HtmlHelper helper, IEnumerable<MenuItem> menuList, BrandPosition brandPosition=BrandPosition.None, NavBarDisplay displayType=NavBarDisplay.Normal, NavBarPosition navbarPosition=NavBarPosition.Default, object htmlAttributes=null)
         {
-            var navBar = new NavBarHelper(helper, menuList, position, htmlAttributes);
+            var navBar = new NavBarHelper(helper, menuList, brandPosition, displayType, navbarPosition, htmlAttributes);
             return new MvcHtmlString(navBar.Render());
         }
 
+        /// <summary>
+        /// Renders a Twitter Bootstrap Button Component
+        /// </summary>
+        /// <param name="helper">The helper.</param>
+        /// <param name="text">The text.</param>
+        /// <param name="action">The action.</param>
+        /// <param name="controller">The controller.</param>
+        /// <param name="status">The status.</param>
+        /// <param name="htmlAttributes">The HTML attributes.</param>
+        /// <returns></returns>
         public static MvcHtmlString Button(this HtmlHelper helper, string text, string action, string controller="", ButtonStatus status = ButtonStatus.Default, object htmlAttributes = null)
         {
             ButtonHelper button = new ButtonHelper(helper, GetStatusStrategy(status), text, action, controller, status, htmlAttributes);

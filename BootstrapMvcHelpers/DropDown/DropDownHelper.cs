@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
 using BootstrapMvcHelpers.Interfaces;
+using System.Text;
 
 namespace BootstrapMvcHelpers
 {
@@ -61,21 +62,26 @@ namespace BootstrapMvcHelpers
         public string Render()
         {
             var divBuilder = GetDropDownDivBuilder(name, htmlAttributes);
+            var dropDownBuilder = GetUnorderedListBuilder();
             var triggerBuilder = GetDropDownTriggerBuilder(name, optionLabel);
             var caretBuilder = GetTriggerCaretBuilder();
 
-            triggerBuilder.InnerHtml += caretBuilder.ToString();
-            divBuilder.InnerHtml += triggerBuilder.ToString();
+            StringBuilder divHtml = new StringBuilder();
+            StringBuilder dropDownHtml = new StringBuilder();
 
-            var dropDownBuilder = GetUnorderedListBuilder();
+            triggerBuilder.InnerHtml += caretBuilder.ToString();
+            divHtml.Append(triggerBuilder.ToString());
 
             foreach (var item in selectList)
             {
                 var listItemBuilder = GetListItemBuilder(item);
-                dropDownBuilder.InnerHtml += Environment.NewLine + listItemBuilder.ToString(TagRenderMode.Normal);
+                dropDownHtml.Append(Environment.NewLine + listItemBuilder.ToString(TagRenderMode.Normal));
             }
 
+            dropDownBuilder.InnerHtml += dropDownHtml.ToString();
+            divBuilder.InnerHtml += divHtml.ToString();
             divBuilder.InnerHtml += dropDownBuilder.ToString(TagRenderMode.Normal);
+
             return divBuilder.ToString(TagRenderMode.Normal);
         }
 
@@ -145,7 +151,7 @@ namespace BootstrapMvcHelpers
             triggerBuilder.Attributes.Add("role", "button");
             triggerBuilder.Attributes.Add("data-toggle", "dropdown");
             triggerBuilder.Attributes.Add("data-target", "#");
-            triggerBuilder.SetInnerText(optionLabel ?? "Select");
+            triggerBuilder.SetInnerText(string.Format("{0} ", optionLabel ?? "Select"));
             return triggerBuilder;
         }
     }

@@ -30,6 +30,7 @@ namespace BootstrapMvcHelpers
             this.strategy = strategy;
             this.status = status;
             this.htmlAttributes = htmlAttributes;
+            this.text = text;
         }
 
         /// <summary>

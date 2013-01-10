@@ -52,6 +52,8 @@
     <Compile Include="DropDown\DropDownHelper.cs" />
     <Compile Include="Enums\BrandPosition.cs" />
     <Compile Include="Enums\ButtonStatus.cs" />
+    <Compile Include="Enums\NavBarDisplay.cs" />
+    <Compile Include="Enums\NavBarPosition.cs" />
     <Compile Include="Interfaces\IBootstrapComponent.cs" />
     <Compile Include="NavBar\NavBarHelper.cs" />
     <Compile Include="Shared\MenuItem.cs" />
